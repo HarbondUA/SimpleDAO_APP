@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Find Science Magazine to Edit</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body class="dark-theme">
+<th:block th:insert="~{/scienceMagazinePages/menuScienceMagazines}"></th:block>
+<h2>Find Science Magazine to Edit</h2>
+<form th:action="@{/scienceMagazinePages/edit}" method="POST">
+    <div class="form-group">
+        <label for="title">Book Title:</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter science magazine title" required/>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Find Science Magazine"/>
+</form>
+</body>
+</html>

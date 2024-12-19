@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Book</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body class="dark-theme">
+<th:block th:insert="~{/bookPages/menuBooks}"></th:block>
+<h2>Edit Book</h2>
+<form th:action="@{/bookPages/edit/save}" th:object="${book}" method="POST">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" placeholder="Enter Title" th:field="*{title}" readonly/>
+    </div>
+    <div class="form-group">
+        <label for="publisher">Publisher</label>
+        <input type="text" class="form-control" placeholder="Enter Publisher" th:field="*{publisher}" required/>
+    </div>
+    <div class="form-group">
+        <label for="pageCount">Page count</label>
+        <input type="number" class="form-control" placeholder="Enter page count" th:field="*{pageCount}" required/>
+    </div>
+    <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" placeholder="Enter author" th:field="*{author}" required/>
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" placeholder="Enter genre" th:field="*{genre}" required/>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+</body>
+</html>

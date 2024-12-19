@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Find Book to Edit</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body class="dark-theme">
+<th:block th:insert="~{/bookPages/menuBooks}"></th:block>
+<h2>Find Book to Edit</h2>
+<form th:action="@{/bookPages/edit}" method="POST">
+    <div class="form-group">
+        <label for="title">Book Title:</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title" required/>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Find Book"/>
+</form>
+</body>
+</html>

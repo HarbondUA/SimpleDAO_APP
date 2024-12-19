@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Find Books by Scientific Field</title>
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body class="dark-theme">
+<th:block th:insert="~{/scienceMagazinePages/menuScienceMagazines}"></th:block>
+<h2>Find Books by Scientific Field</h2>
+<form th:action="@{/scienceMagazinePages/byScientificField}" method="POST">
+  <div class="form-group">
+    <label for="scientificField">Scientific Field:</label>
+    <input type="text" class="form-control" id="scientificField" name="scientificField" placeholder="Enter scientific field name" required/>
+  </div>
+  <input type="submit" class="btn btn-success" value="Search"/>
+</form>
+<div th:if="${allScienceMagazines != null}">
+  <h3>Books by Scientific Field</h3>
+  <table class="table table-hover">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Publisher</th>
+      <th>Page Count</th>
+      <th>Issue Number</th>
+      <th>Genre</th>
+      <th>Scientific Field</th>
+      <th>Peer Reviewed</th>
+    </tr>
+    <tr th:each="scienceMagazine : ${allScienceMagazines}">
+      <td th:text="${scienceMagazine.id}"></td>
+      <td th:text="${scienceMagazine.title}"></td>
+      <td th:text="${scienceMagazine.publisher}"></td>
+      <td th:text="${scienceMagazine.pageCount}"></td>
+      <td th:text="${scienceMagazine.issueNumber}"></td>
+      <td th:text="${scienceMagazine.genre}"></td>
+      <td th:text="${scienceMagazine.scientificField}"></td>
+      <td th:text="${scienceMagazine.peerReviewed}"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

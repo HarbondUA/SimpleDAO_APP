@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Science Magazine</title>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body class="dark-theme">
+<th:block th:insert="~{/scienceMagazinePages/menuScienceMagazines}"></th:block>
+<h2>Delete Science Magazine</h2>
+<form th:action="@{/scienceMagazinePages/delete}" method="POST">
+    <div class="form-group">
+        <label for="title">Book Title:</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter science magazine title" required/>
+    </div>
+    <input type="submit" class="btn btn-danger" value="Delete Science Magazine"/>
+</form>
+</body>
+</html>
+
